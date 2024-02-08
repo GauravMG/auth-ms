@@ -31,7 +31,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn prettier:fix"
+      "pre-commit": "yarn prettier:check"
     }
   },
   "engines": {

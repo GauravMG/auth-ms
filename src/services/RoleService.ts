@@ -1,17 +1,17 @@
-import { isArray, uniq } from "lodash"
+import {isArray, uniq} from "lodash"
 
 import {
-    CreateRolePayload,
-    DeleteRolePayload,
-    ListRolePayload,
-    RoleDetails,
-    UpdateRolePayload
+	CreateRolePayload,
+	DeleteRolePayload,
+	ListRolePayload,
+	RoleDetails,
+	UpdateRolePayload
 } from "../types/roles"
 
 import CommonModel from "../models/CommonModel"
 
-import helper, { createSlug } from "../helpers/helper"
-import { BadRequestException } from "../libs/exceptions"
+import helper, {createSlug} from "../helpers/helper"
+import {BadRequestException} from "../libs/exceptions"
 
 class RoleService {
 	private roleModel
@@ -28,9 +28,12 @@ class RoleService {
 
 	public async create(inputData: CreateRolePayload, userId: number) {
 		try {
+			//@ts-ignore
 			inputData = isArray(inputData) ? inputData : [inputData]
-            //@ts-ignore 
-			const title: string[] = inputData.map((el) => el.title).filter((el) => el)
+			//@ts-ignore
+			const title: string[] = inputData
+				.map((el) => el.title)
+				.filter((el) => el)
 
 			const [roleExists, roles]: [RoleDetails[], RoleDetails[]] =
 				await Promise.all([
@@ -51,7 +54,11 @@ class RoleService {
 			// @ts-ignore
 			for (let roleData of inputData) {
 				if (!roleData.slug) {
-					roleData.slug = await createSlug(roles, "slug", roleData.title)
+					roleData.slug = await createSlug(
+						roles,
+						"slug",
+						roleData.title
+					)
 				}
 			}
 
@@ -69,7 +76,8 @@ class RoleService {
 
 	public async list(inputData: ListRolePayload) {
 		try {
-			const {filter, range, sort}: ListRolePayload = await helper.listFunction(inputData)
+			const {filter, range, sort}: ListRolePayload =
+				await helper.listFunction(inputData)
 
 			const [data, [{total}]]: [RoleDetails[], [{total: number}]] =
 				await Promise.all([
