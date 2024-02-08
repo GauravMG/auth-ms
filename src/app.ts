@@ -35,7 +35,9 @@ if (
 	!process.env.ENVIRONMENT ||
 	!SUPPORTED_ENVS.includes(process.env.ENVIRONMENT)
 ) {
-	const supported = SUPPORTED_ENVS.map((env) => JSON.stringify(env)).join(", ")
+	const supported = SUPPORTED_ENVS.map((env) => JSON.stringify(env)).join(
+		", "
+	)
 
 	eventEmitter.emit(
 		"logging",

@@ -30,8 +30,8 @@ class RoleService {
 		try {
 			//@ts-ignore
 			inputData = isArray(inputData) ? inputData : [inputData]
-			//@ts-ignore
 			const title: string[] = inputData
+				// @ts-expect-error for comparing title
 				.map((el) => el.title)
 				.filter((el) => el)
 

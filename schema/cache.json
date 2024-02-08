@@ -1,6 +1,6 @@
 {
   "/v1/auth": {
-    "hash": "5933a07cfd987af6ea450a8388aa15ed377d6e39",
+    "hash": "b7efda9176d09d015a55d1705e885ea7131bd996",
     "schemas": {
       "/v1/auth/register": {
         "type": "object",
@@ -322,7 +322,7 @@
     }
   },
   "/v1/configs": {
-    "hash": "4dd8b29a25f767c5f3aee27183b9c220658231ca",
+    "hash": "41510f64133cfd02aa479599148019facc25cbe5",
     "schemas": {
       "/v1/configs/create": {
         "anyOf": [
@@ -502,7 +502,7 @@
     }
   },
   "/v1/users": {
-    "hash": "a3e767282faf2106fc7b7c949cf7ad0f353686bb",
+    "hash": "44d4bb5c331dacce7e7a5a14a450a5e0986f06b5",
     "schemas": {
       "/v1/users/create": {
         "anyOf": [
@@ -727,7 +727,7 @@
     }
   },
   "/v1/notification-services": {
-    "hash": "d9c739d2d38f8993c3a248fd26d05e047e327f53",
+    "hash": "019d4e3e434da9b35eb9ecf5e48057f4ce53a28b",
     "schemas": {
       "/v1/notification-services/create": {
         "anyOf": [
